@@ -106,7 +106,7 @@ module.exports = {
     docsBranch: 'develop',
     editLinks: true,
     editLinkText: 'Suggest edits',
-    lastUpdated: true,
+    lastUpdated: false,
     smoothScroll: false,
     nav: [
       // Guide & API Reference has defined in: theme/components/NavLinks.vue
