@@ -180,7 +180,13 @@ class ContextMenu extends BasePlugin {
 
     this.callOnPluginsReady(() => {
       if (this.isPluginsReady) {
-        setTimeout(delayedInitialization, 0);
+        if (!this.hasTimeout) {
+          this.hasTimeout = true;
+          setTimeout(() => {
+            delayedInitialization();
+            this.hasTimeout = false;
+          }, 0);
+        }
       } else {
         delayedInitialization();
       }
